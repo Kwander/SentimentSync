@@ -1,0 +1,33 @@
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20%;
+    height: 100px;
+    width: 100%;
+  }
+  nav a{
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+  }
+  *{
+    margin: 0px;
+    padding: 0px;
+    color: black;
+  }
+
+  .slidercont{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  input{
+    width: 350px;
+    accent-color: red;
+  }
+  #save{
+    width: 250px;
+    color: white;
+    background-color: magenta;
+  }
