@@ -56,14 +56,14 @@ function App() {
         </div>
         <div className='poem-sect'>
           <div>
-            <img src="https://clientdemand.onrender.com/src/material/poem.jpg" className='poem-img reveal' alt="" />
+            <img src="https://clientdemand.onrender.com/material/poem.jpg" className='poem-img reveal' alt="" />
             <p id='text1' className='reveal'>I love you so much</p>
           </div>
           <div>
             <p id='text2' className='reveal'>I would do the impossible for you</p>
-            <img src="https://clientdemand.onrender.com/src/material/poem2.jpg" alt="" className='poem2-img reveal'/>
+            <img src="https://clientdemand.onrender.com/material/poem2.jpg" alt="" className='poem2-img reveal'/>
           </div>
-          <img src="https://clientdemand.onrender.com/src/material/heart.png" id='heart' className='reveal' alt="" />
+          <img src="https://clientdemand.onrender.com/material/heart.png" id='heart' className='reveal' alt="" />
         </div>
 
         <div className='info' id='info' onMouseEnter={Expand} onMouseLeave={Expand}>

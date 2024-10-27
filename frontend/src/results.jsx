@@ -58,7 +58,7 @@ export default function Result(){
             <div className="loader-cont">
                 <span id="loader" className="loader"></span>
             </div>
-            <video src="https://clientdemand.onrender.com/src/material/resultbg.mp4" id="bg" autoPlay muted loop></video>
+            <video src="https://clientdemand.onrender.com/material/resultbg.mp4" id="bg" autoPlay muted loop></video>
             <h1 style={{marginTop:'35px', color:"white"}}>Results</h1>
             <button onClick={load} id="check" style={{background:"gray", color:"white", position:"absolute", left:"49%", top:'50%',padding:"20px", transform:"translate(-49%,-50%)"}}>Check results</button>
             <div id="datadisplay">

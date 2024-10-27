@@ -59,7 +59,7 @@ export default function Feelings(){
 
             </div>
             <div>
-                <img src="https://clientdemand.onrender.com/src/material/feelingspoem.jpg" alt="" 
+                <img src="https://clientdemand.onrender.com/material/feelingspoem.jpg" alt="" 
                 style={{
                     width : "50%",
                     borderRadius:"15px"
