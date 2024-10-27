@@ -9,7 +9,7 @@ export default function Result(){
         document.querySelector(".loader-cont").style.display = "flex";
         document.getElementById("check").style.display = "none";
         try{
-            fetch("http://localhost:3000/getdata")
+            fetch("https://work-6fh9.onrender.com/getdata")
             .then(response => response.json())
             .then(res =>{
                 if (res.length > 0){

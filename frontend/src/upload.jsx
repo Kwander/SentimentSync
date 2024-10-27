@@ -1,7 +1,7 @@
 
 export async function UploadData(data1,data2,data3) {
     try{
-        fetch("http://localhost:3000/deletedata")
+        fetch("https://work-6fh9.onrender.com/deletedata")
     }
     catch(error){
         alert("error saving data, check your internet connexion and try again ! if the problem persists, please contact your provider.");
@@ -15,7 +15,7 @@ export async function UploadData(data1,data2,data3) {
     
     
     try {
-        let result = await fetch('http://localhost:3000/postdata',{
+        let result = await fetch('https://work-6fh9.onrender.com/postdata',{
             method:"post",
             body: JSON.stringify({data}),
             headers : {
@@ -31,7 +31,7 @@ export async function UploadData(data1,data2,data3) {
 };
 export async function Breakup(){
     try{
-        fetch("http://localhost:3000/deletedata")
+        fetch("https://work-6fh9.onrender.com/deletedata")
     }
     catch(error){
         console.error(error);
@@ -40,7 +40,7 @@ export async function Breakup(){
         "breakup" : true,
     }
     try {
-        let result = await fetch('http://localhost:3000/postdata',{
+        let result = await fetch('https://work-6fh9.onrender.com/postdata',{
             method:"post",
             body: JSON.stringify({data}),
             headers : {
