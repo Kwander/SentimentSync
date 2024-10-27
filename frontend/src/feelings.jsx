@@ -2,7 +2,6 @@ import "./feelings.css"
 import Background from "./bg"
 import { useState } from "react"
 import { UploadData } from "./upload"
-import { Breakup } from "./upload"
 
 function Slider(title, slider, setSlider){
     return(
@@ -60,7 +59,7 @@ export default function Feelings(){
 
             </div>
             <div>
-                <img src="http://localhost:5173/src/material/feelingspoem.jpg" alt="" 
+                <img src="./material/feelingspoem.jpg" alt="" 
                 style={{
                     width : "50%",
                     borderRadius:"15px"

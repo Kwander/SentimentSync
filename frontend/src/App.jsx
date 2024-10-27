@@ -56,14 +56,14 @@ function App() {
         </div>
         <div className='poem-sect'>
           <div>
-            <img src="http://localhost:5173/src/material/poem.jpg" className='poem-img reveal' alt="" />
+            <img src="./material/poem.jpg" className='poem-img reveal' alt="" />
             <p id='text1' className='reveal'>I love you so much</p>
           </div>
           <div>
             <p id='text2' className='reveal'>I would do the impossible for you</p>
-            <img src="http://localhost:5173/src/material/poem2.jpg" alt="" className='poem2-img reveal'/>
+            <img src="./material/poem2.jpg" alt="" className='poem2-img reveal'/>
           </div>
-          <img src="http://localhost:5173/src/material/heart.png" id='heart' className='reveal' alt="" />
+          <img src="./material/heart.png" id='heart' className='reveal' alt="" />
         </div>
 
         <div className='info' id='info' onMouseEnter={Expand} onMouseLeave={Expand}>
