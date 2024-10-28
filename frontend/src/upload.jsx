@@ -1,5 +1,5 @@
 
-export async function UploadData(data1,data2,data3){
+export default async function UploadData(data1,data2,data3){
     try{
         await fetch("https://work-6fh9.onrender.com/deletedata")
     }
