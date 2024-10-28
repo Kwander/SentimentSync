@@ -43,7 +43,7 @@ body{
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  color: #535bf2;
+  color: white;
   font-weight: 700;
   font-size: 20px;
 }
@@ -56,12 +56,12 @@ body{
 
 #text1{
   position: relative;
-  color: #535bf2;
+  color: #fff;
   right: 100px;
 }
 #text2{
   position: relative;
-  color: #535bf2;
+  color: #fff;
   right: -150px;
 }
 
@@ -75,7 +75,7 @@ nav{
   width: 100%;
 }
 nav a{
-  color: purple;
+  color: #fff;
   font-size: 20px;
   font-weight: 700;
 }
@@ -112,7 +112,7 @@ nav a{
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: black;
+  color: white;
   justify-content: center;
   gap: 15%;
   z-index: 1;
@@ -138,8 +138,14 @@ nav a{
 }
 .info h2{
   font-size: 45px;
+  color: white;
+}
+
+.info .fa{
+  color: white;
 }
 .info p{
+  color: white;
   font-size: 25px;
   font-weight: 500;
   transition: all 400ms;

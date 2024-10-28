@@ -1,25 +1,57 @@
 import "./feelings.css"
 import Background from "./bg"
-import { useState } from "react"
-import { UploadData } from "./upload"
+import { useEffect, useState } from "react"
+import UploadData from "./upload"
 
-function Slider(title, slider, setSlider){
+function Slider(title, slider, setSlider, id){
     return(
         <div className="slidercont" style={{borderBottom: "1px solid gray", paddingBottom:"40px", marginBottom:'40px'}}>
             <div>
-                <h3 style={{textTransform: "capitalize", textAlign: "left"}}>{title}</h3>
-                <p>How would you rate your {title} towards your lover</p>
+                <h3 style={{textTransform: "capitalize", textAlign: "left", color:"#fff"}}>{title}</h3>
+                <p style={{color:"#fff"}}>How would you rate your {title} towards your lover</p>
             </div>
             <div style={{display: "flex", gap: '15px',}}>
-                <p>0</p>
-                <input type="range" value={slider} className="slider" max={5} min={0} onChange={(e)=>{setSlider(e.target.value); Check();}}/>
-                <p>5</p>
+                <p style={{color:"#fff"}}>0</p>
+                <input type="range" value={slider} className="slider" id={id} max={10} min={0} onChange={(e)=>{
+                    setSlider(e.target.value); 
+                    Check();
+                }}/>
+                <p style={{color:"#fff"}}>10</p>
             </div>
         </div>
     )
 }
+function load(setValue1,setValue2,setValue3){
+
+    try{
+        fetch("https://work-6fh9.onrender.com/getdata")
+        .then(response => response.json())
+        .then(res =>{
+            if (res.length > 0){
+                const data = res[0].data;
+                setValue1(data.sliderA);
+                setValue2(data.sliderB);
+                setValue3(data.sliderC);
+                
+            }
+            else{
+                setValue1("")
+                setValue2("")
+                setValue3("")
+            }
+        }) 
+    }
+    catch(err){
+        alert("error with the data, if the problem persits contact the provider")
+    }
+
+    
+}
+
 
 function Check(){
+
+
     let slider1 = document.querySelectorAll(".slider")[0].value;
     let slider2 = document.querySelectorAll(".slider")[1].value;
     let slider3 = document.querySelectorAll(".slider")[2].value;
@@ -30,13 +62,16 @@ function Check(){
     else{
         document.getElementById("breakup").style.opacity = "0";
     }
+    UploadData(slider1,slider2,slider3);
 }
 
 export default function Feelings(){
-    const [slider1, setSlider1] = useState(3)
-    const [slider2, setSlider2] = useState(3)
-    const [slider3, setSlider3] = useState(3)
-
+    const [slider1, setSlider1] = useState("5")
+    const [slider2, setSlider2] = useState("5")
+    const [slider3, setSlider3] = useState("5")
+    useEffect(()=>{
+        load(setSlider1,setSlider2,setSlider3);
+    },[])
     return(
         <>
             <Background/>
@@ -46,16 +81,9 @@ export default function Feelings(){
             </nav>
             <div className="sliders" style={{width:'60%', position:"relative", left:"50%", transform:"translateX(-50%)", marginBottom:"150px"}}>
                 
-                {Slider('trust', slider1, setSlider1)}
-                {Slider('love', slider2, setSlider2)}
-                {Slider('pride', slider3,setSlider3)}
-                <button 
-                type="submit" 
-                id="save"
-                
-                onClick={()=>{
-                    UploadData(slider1,slider2,slider3)
-                }}>Save</button>
+                {Slider('trust', slider1, setSlider1, "id1")}
+                {Slider('love', slider2, setSlider2, "id2")}
+                {Slider('pride', slider3,setSlider3, "id3")}
 
             </div>
             <div>
