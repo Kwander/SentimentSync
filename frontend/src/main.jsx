@@ -2,7 +2,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import Feelings from "./feelings.jsx";
-import Result from "./results.jsx";
 import BreakUp from "./breakup.jsx";
 import App from './App.jsx'
 
