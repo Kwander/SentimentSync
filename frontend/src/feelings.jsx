@@ -21,10 +21,10 @@ function Slider(title, slider, setSlider, id){
         </div>
     )
 }
-function load(setValue1,setValue2,setValue3){
+async function load(setValue1,setValue2,setValue3){
 
     try{
-        fetch("https://work-6fh9.onrender.com/getdata")
+        await fetch("https://work-6fh9.onrender.com/getdata")
         .then(response => response.json())
         .then(res =>{
             if (res.length > 0){
@@ -49,7 +49,7 @@ function load(setValue1,setValue2,setValue3){
 }
 
 
-function Check(){
+async function Check(){
 
 
     let slider1 = document.querySelectorAll(".slider")[0].value;
@@ -62,7 +62,7 @@ function Check(){
     else{
         document.getElementById("breakup").style.opacity = "0";
     }
-    UploadData(slider1,slider2,slider3);
+    await UploadData(slider1,slider2,slider3);
 }
 
 export default function Feelings(){

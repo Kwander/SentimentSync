@@ -1,17 +1,12 @@
 
-function deldata(){
+export async function UploadData(data1,data2,data3){
     try{
-        fetch("https://work-6fh9.onrender.com/deletedata")
+        await fetch("https://work-6fh9.onrender.com/deletedata")
     }
     catch(error){
         alert("error saving data, check your internet connexion and try again ! if the problem persists, please contact your provider.");
     }
-}
-export default function UploadData(data1,data2,data3){
-    deldata()
-    setTimeout(() => {
-        fetchdata(data1,data2,data3);
-    }, 1000);
+    await fetchdata(data1,data2,data3);
 }
 
 async function fetchdata(data1,data2,data3) {
@@ -39,11 +34,16 @@ async function fetchdata(data1,data2,data3) {
     }
 };
 
-export  function Breakup(){
-    deldata()
-    setTimeout(() => {
-        sendBreakup();
-    }, 1000);
+export async function Breakup(){
+    try{
+        await fetch("https://work-6fh9.onrender.com/deletedata")
+    }
+    catch(error){
+        alert("error saving data, check your internet connexion and try again ! if the problem persists, please contact your provider.");
+    }
+
+    await sendBreakup();
+
 }
 async function sendBreakup(){
     let data = {
