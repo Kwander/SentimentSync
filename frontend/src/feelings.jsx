@@ -13,8 +13,19 @@ function Slider(title, slider, setSlider, id){
             <div style={{display: "flex", gap: '15px',}}>
                 <p style={{color:"#fff"}}>0</p>
                 <input type="range" value={slider} className="slider" id={id} max={10} min={0} onChange={(e)=>{
+                    document.getElementById("loader").style.display = "block"
+                    document.querySelectorAll(".lower-opa").forEach(element =>{
+                        element.style.opacity = 0.2;
+                    })
+
                     setSlider(e.target.value); 
                     Check();
+                    setTimeout(() => {
+                        document.querySelectorAll(".lower-opa").forEach(element =>{
+                            element.style.opacity = 1;
+                        })
+                        document.getElementById("loader").style.display = "none"
+                    }, 1000);
                 }}/>
                 <p style={{color:"#fff"}}>10</p>
             </div>
@@ -22,7 +33,9 @@ function Slider(title, slider, setSlider, id){
     )
 }
 async function load(setValue1,setValue2,setValue3){
-
+    document.querySelectorAll(".lower-opa").forEach(element =>{
+        element.style.opacity = 0.2;
+    })
     try{
         await fetch("https://work-6fh9.onrender.com/getdata")
         .then(response => response.json())
@@ -43,9 +56,16 @@ async function load(setValue1,setValue2,setValue3){
     }
     catch(err){
         alert("error with the data, if the problem persits contact the provider")
+        window.location.href = "/home";
     }
-
-    
+    finally{
+        setTimeout(() => {
+            document.querySelectorAll(".lower-opa").forEach(element =>{
+                element.style.opacity = 1;
+            })
+            document.getElementById("loader").style.display = "none"
+        }, 1000);
+    }
 }
 
 
@@ -69,17 +89,21 @@ export default function Feelings(){
     const [slider1, setSlider1] = useState("5")
     const [slider2, setSlider2] = useState("5")
     const [slider3, setSlider3] = useState("5")
+
+
     useEffect(()=>{
         load(setSlider1,setSlider2,setSlider3);
     },[])
     return(
         <>
+            <div className="loader" id="loader"></div>  
             <Background/>
             <nav>
-                <a href="/home">Home</a>
-                <a href="/feelings">Feelings</a>
+                <a href="/home" className=" lower-opa">Home</a>
+                <a href="/feelings" className=" lower-opa">Feelings</a>
             </nav>
-            <div className="sliders" style={{width:'60%', position:"relative", left:"50%", transform:"translateX(-50%)", marginBottom:"150px"}}>
+            <div className="sliders lower-opa" style={{width:'60%', position:"relative", left:"50%", transform:"translateX(-50%)", marginBottom:"150px"}}>
+
                 
                 {Slider('trust', slider1, setSlider1, "id1")}
                 {Slider('love', slider2, setSlider2, "id2")}
@@ -87,13 +111,16 @@ export default function Feelings(){
 
             </div>
             <div>
-                <img src="https://clientdemand.onrender.com/material/feelingspoem.jpg" alt="" 
+                <img src="https://clientdemand.onrender.com/material/feelingspoem.jpg" className=" lower-opa" alt="" 
                 style={{
                     width : "50%",
                     borderRadius:"15px"
                 }}/>
             </div>
-            <button id="breakup" onClick={()=>{window.location.href = '/break'}} style={{opacity: "0", position:"absolute", right:"50px", bottom:"50px", backgroundColor:"red", color:"white", zIndex:"10"}}>Break up</button>
+            <button id="breakup" onClick={()=>{
+                UploadData(slider1,slider2,slider3);
+                window.location.href = '/break'
+                }} style={{opacity: "0", position:"absolute", right:"50px", bottom:"50px", backgroundColor:"red", color:"white", zIndex:"10"}}>Break up</button>
         </>
     )
 }
