@@ -6,6 +6,11 @@ nav{
     height: 100px;
     width: 100%;
   }
+  .section{
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+  }
   nav a{
     color: white;
     font-size: 20px;
@@ -51,5 +56,43 @@ nav{
     left: 46%;
     
     transform: translateX(-50%,-50%);
+  
+  }
+  .poemm{
+    width: 50%;
+    border-radius: 15px;
+  }
+  .indicators p{
+    color: #fff;
   }
   @keyframes l3 {to{transform: rotate(1turn)}}
+  @media only screen and (max-width:1300px){
+    .slidercont{
+      width: max-content;
+      display: flex;
+      align-items: start;
+      gap: 25px;
+      flex-direction: column;
+    }
+    .slider{
+      width: 500px;
+    }
+    .sliders{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 80vh;
+      width: 100%;
+    }
+    .slidercont h3{
+      font-size: 25px;
+    }
+    .slidercont p{
+      font-size: 20px;
+    }
+    .poemm{
+      width: 80%;
+      border-radius: 15px;
+    }
+  }

@@ -3,7 +3,6 @@ import Background from './bg';
 
 
 function App() {
-  document.querySelector("#bg").addEventListener("scroll",reveal);
   function reveal(){
     var reveals = document.querySelectorAll(".reveal");
 
@@ -45,8 +44,7 @@ function App() {
 
   return (
     <>
-      <Background/>
-      <section >
+      <section className='primary' id='primary' onScroll={reveal}>
         <nav>
           <a href="/home">Home</a>
           <a href="/feelings">Feelings</a>
