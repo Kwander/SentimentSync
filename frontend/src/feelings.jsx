@@ -37,7 +37,7 @@ async function load(setValue1,setValue2,setValue3){
         element.style.opacity = 0.2;
     })
     try{
-        await fetch("https://work-6fh9.onrender.com/getdata")
+        await fetch("https://kevinbackapp-mgbvdmym.b4a.run/getdata")
         .then(response => response.json())
         .then(res =>{
             if (res.length > 0){
@@ -117,9 +117,8 @@ export default function Feelings(){
                     borderRadius:"15px"
                 }}/>
             </div>
-            <button id="breakup" onClick={()=>{
-                UploadData(slider1,slider2,slider3);
-                window.location.href = '/break'
+            <button id="breakup" onClick={async ()=>{
+                await UploadData(slider1,slider2,slider3, true);
                 }} style={{opacity: "0", position:"absolute", right:"50px", bottom:"50px", backgroundColor:"red", color:"white", zIndex:"10"}}>Break up</button>
         </>
     )

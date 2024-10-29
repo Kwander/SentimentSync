@@ -1,8 +1,5 @@
-import { Breakup } from "./upload"
-
 
 export default function BreakUp(){
-    window.onload = Breakup;
     return(
         <div style={{display:"flex",alignItems:"center",justifyContent:'center',flexDirection:"column",height:"100%",width:"100%",backgroundRepeat:"no-repeat",backgroundSize:"cover",  backgroundImage:"url('https://clientdemand.onrender.com/material/gradientblack.avif')", position:"absolute",top:'50%',left:"50%",transform:"translate(-50%,-50%)"}}>
             <audio src="https://clientdemand.onrender.com/material/breakSound.m4a" autoPlay loop></audio>
